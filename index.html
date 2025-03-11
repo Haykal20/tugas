@@ -1,266 +1,352 @@
+<!-- Haykalf.s-->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sejarah dan Produk Laptop Windows</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px;
-            border: 3px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
-        header p {
-            margin: 5px 0;
-        }
-
-        .clock {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 5px;
-            display: inline-block;
-            animation: glow 1.5s infinite alternate, float 3s infinite ease-in-out;
-        }
-
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-            }
-            to {
-                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        section {
-            margin-bottom: 30px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #0056b3;
-        }
-
-        section p, section ul {
-            margin: 0 0 15px;
-        }
-
-        section ul {
-            padding-left: 20px;
-        }
-
-        section ul li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-        }
-
-        footer h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #0056b3;
-        }
-
-        footer ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            margin-bottom: 10px;
-        }
-
-        footer ul li a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        footer ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .audio-player {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sejarah dan Produk Laptop Windows</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 20px;
+background-color: #f4f4f4;
+color: #333;
 }
 
-audio {
-    width: 200px;
+.intro {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, #1e3c72, #2a5298);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+color: white;
+font-size: 24px;
+z-index: 1000;
 }
-    </style>
+
+.intro.hidden {
+display: none;
+}
+
+.intro button {
+margin-top: 20px;
+padding: 10px 20px;
+font-size: 18px;
+cursor: pointer;
+background: #fff;
+color: #1e3c72;
+border: none;
+border-radius: 5px;
+transition: background 0.3s ease;
+}
+
+.intro button:hover {
+background: #ddd;
+}
+
+  body.intro-active {
+ overflow: hidden;
+ }
+
+header {
+text-align: center;
+margin-bottom: 20px;
+background: linear-gradient(135deg, #1e3c72, #2a5298);
+color: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.profile-img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+margin-right: 20px;
+border: 3px solid #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+margin: 0;
+font-size: 2em;
+}
+
+header p {
+margin: 5px 0;
+}
+
+.clock {
+font-size: 1.5em;
+font-weight: bold;
+margin-top: 10px;
+background: rgba(255, 255, 255, 0.1);
+padding: 10px;
+border-radius: 5px;
+display: inline-block;
+animation: glow 1.5s infinite alternate, float 3s infinite ease-in-out;
+}
+
+@keyframes glow {
+from {
+box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+to {
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+}
+
+@keyframes float {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-10px);
+}
+}
+
+section {
+margin-bottom: 30px;
+background: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+font-size: 1.5em;
+margin-bottom: 10px;
+color: #0056b3;
+}
+
+section p, section ul {
+margin: 0 0 15px;
+}
+
+section ul {
+padding-left: 20px;
+}
+
+section ul li {
+margin-bottom: 10px;
+}
+
+footer {
+margin-top: 30px;
+padding-top: 20px;
+border-top: 1px solid #ccc;
+}
+
+footer h2 {
+font-size: 1.5em;
+margin-bottom: 10px;
+color: #0056b3;
+}
+
+footer ul {
+list-style-type: none;
+padding: 0;
+}
+
+footer ul li {
+margin-bottom: 10px;
+}
+
+footer ul li a {
+color: #0056b3;
+text-decoration: none;
+}
+
+footer ul li a:hover {
+text-decoration: underline;
+}
+
+.audio-player {
+position: fixed;
+bottom: 20px;
+right: 20px; 
+width: 30px;
+height: 30px;
+background: rgba(255, 255, 255, 0.3); 
+padding: 5px; 
+border-radius: 50%;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(5px);
+}
+
+.music-icon {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: black;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 0.5px solid white;
+cursor: pointer;
+transition: transform 0.5s linear;
+}
+
+.rotate {
+animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+</style>
 </head>
 <body>
-    <header>
-        <div class="profile">
-            <img src="profile.jpg" alt="Foto Profil" class="profile-img">
-            <h1>NAMA: HAYKAL FURQAN SHAFIQ</h1>
-        </div>
-        <p>NIM: 24210076</p>
-        <p>MK: SISTEM OPERASI</p>
-        <p>ROMBEL: B</p>
-        <p>DOSEN PENGAMPU: TEUKU MUHAMMAD MIRZA KEUAMALA, S.KOM, MT</p>
-        <div id="clock" class="clock">
-            <span id="time">00:00:00</span>
-        </div>
-    </header>
 
-    <section>
-        <h2>1. Latar Belakang Laptop Windows</h2>
-        <p>
-            Laptop Windows adalah perangkat komputer portabel yang menjalankan sistem operasi Windows, dikembangkan oleh Microsoft. Sejak peluncuran Windows 1.0 pada tahun 1985, Microsoft telah berfokus pada pengembangan sistem operasi yang ramah pengguna dan kompatibel dengan berbagai perangkat keras. Laptop Windows pertama kali muncul pada akhir 1980-an dan awal 1990-an, seiring dengan perkembangan teknologi komputer portabel.
-        </p>
-        <p>
-            Pada awalnya, laptop Windows menggunakan sistem operasi MS-DOS, tetapi dengan dirilisnya Windows 3.0 pada tahun 1990, laptop mulai beralih ke antarmuka grafis yang lebih mudah digunakan. Perkembangan laptop Windows semakin pesat dengan dirilisnya Windows 95, yang membawa fitur Plug and Play, dukungan jaringan yang lebih baik, dan antarmuka pengguna yang lebih modern.
-        </p>
-        <p>
-            Saat ini, laptop Windows mendominasi pasar komputer portabel, dengan berbagai merek seperti Dell, HP, Lenovo, Acer, dan Microsoft Surface menawarkan produk yang berjalan di sistem operasi Windows. Laptop Windows modern dilengkapi dengan fitur-fitur canggih seperti layar sentuh, dukungan pena digital, dan integrasi dengan layanan cloud Microsoft seperti OneDrive dan Microsoft 365.
-        </p>
-    </section>
+<div class="intro" id="intro">
+<p>Sejarah dan Produk Laptop Windows</p>
+<button onclick="openWeb()">Click aja</button>
+</div>
 
-    <section>
-        <h2>2. Produk Terburuk Laptop Windows</h2>
-        <ul>
-            <li><strong>Microsoft Surface RT (2012)</strong>: Laptop hybrid yang menjalankan Windows RT, versi Windows yang tidak kompatibel dengan aplikasi desktop tradisional. Keterbatasan ini membuatnya kurang populer di pasar, dan akhirnya dihentikan.</li>
-            <li><strong>HP TouchSmart IQ500 Series (2008)</strong>: Laptop all-in-one dengan layar sentuh yang dirilis sebelum teknologi sentuh matang. Performanya lambat dan harganya terlalu mahal untuk fitur yang ditawarkan.</li>
-            <li><strong>Dell XPS M2010 (2006)</strong>: Laptop premium dengan desain besar dan berat, tetapi harganya sangat mahal dan kurang praktis untuk digunakan sehari-hari.</li>
-            <li><strong>Acer Aspire 5738P (2009)</strong>: Laptop dengan layar sentuh yang memiliki masalah kualitas dan performa yang buruk. Banyak pengguna mengeluhkan overheating dan responsivitas layar sentuh yang buruk.</li>
-            <li><strong>Toshiba Satellite A665 (2010)</strong>: Laptop dengan masalah overheating yang serius dan kualitas bahan yang rendah. Banyak pengguna melaporkan kegagalan hardware dalam waktu singkat.</li>
-        </ul>
-    </section>
+<div class="content hidden" id="content">
+<header>
+<div class="profile">
+<img src="https://raw.githubusercontent.com/Haykal20/tugas/main/profile.jpg" alt="Foto Profil" class="profile-img">
+<h1>NAMA: HAYKAL FURQAN SHAFIQ</h1>
+</div>
+<p>NIM: 24210076</p>
+<p>MK: SISTEM OPERASI</p>
+<p>ROMBEL: B</p>
+<p>DOSEN PENGAMPU: TEUKU MUHAMMAD MIRZA KEUAMALA, S.KOM, MT</p>
+<div id="clock" class="clock">
+<span id="time">00:00:00</span>
+</div>
+</header>
 
-    <section>
-        <h2>3. Motivasi dalam Mengembangkan Laptop Windows</h2>
-        <p>
-            Motivasi utama Microsoft dalam mengembangkan laptop Windows adalah untuk menyediakan perangkat yang dapat memenuhi kebutuhan pengguna modern, baik untuk produktivitas, hiburan, maupun kreativitas. Dengan menggabungkan kekuatan sistem operasi Windows dengan desain hardware yang inovatif, Microsoft bertujuan untuk menciptakan laptop yang ringan, tangguh, dan memiliki performa tinggi.
-        </p>
-        <p>
-            Selain itu, Microsoft juga ingin memperluas ekosistem Windows dengan menyediakan perangkat yang terintegrasi dengan layanan cloud seperti Microsoft 365 dan Azure. Hal ini memungkinkan pengguna untuk bekerja secara efisien di mana saja, kapan saja, dengan dukungan fitur-fitur canggih seperti keamanan yang ditingkatkan, AI, dan komputasi awan.
-        </p>
-    </section>
+<section>
+<h2>1. Latar Belakang Laptop Windows</h2>
+<p>
+Laptop Windows adalah perangkat komputer portabel yang menjalankan sistem operasi Windows, dikembangkan oleh Microsoft. Sejak peluncuran Windows 1.0 pada tahun 1985, Microsoft telah berfokus pada pengembangan sistem operasi yang ramah pengguna dan kompatibel dengan berbagai perangkat keras. Laptop Windows pertama kali muncul pada akhir 1980-an dan awal 1990-an, seiring dengan perkembangan teknologi komputer portabel.
+</p>
+<p>
+Pada awalnya, laptop Windows menggunakan sistem operasi MS-DOS, tetapi dengan dirilisnya Windows 3.0 pada tahun 1990, laptop mulai beralih ke antarmuka grafis yang lebih mudah digunakan. Perkembangan laptop Windows semakin pesat dengan dirilisnya Windows 95, yang membawa fitur Plug and Play, dukungan jaringan yang lebih baik, dan antarmuka pengguna yang lebih modern.
+</p>
+<p>
+Saat ini, laptop Windows mendominasi pasar komputer portabel, dengan berbagai merek seperti Dell, HP, Lenovo, Acer, dan Microsoft Surface menawarkan produk yang berjalan di sistem operasi Windows. Laptop Windows modern dilengkapi dengan fitur-fitur canggih seperti layar sentuh, dukungan pena digital, dan integrasi dengan layanan cloud Microsoft seperti OneDrive dan Microsoft 365.
+</p>
+</section>
 
-    <section>
-        <h2>4. Cashflow Tertinggi dari Penjualan Laptop Windows dalam 5 Tahun Terakhir</h2>
-        <p>
-            Selama lima tahun terakhir, penjualan laptop Windows telah memberikan kontribusi signifikan terhadap pendapatan Microsoft. Pada tahun fiskal 2021, pendapatan dari penjualan perangkat Windows, termasuk laptop, mencapai US$16,7 miliar, naik 12% dibandingkan tahun sebelumnya. Peningkatan ini didorong oleh permintaan yang tinggi akan laptop Windows untuk keperluan kerja dari rumah (remote work) dan pembelajaran jarak jauh (online learning) selama pandemi COVID-19.
-        </p>
-        <p>
-            Beberapa seri laptop Windows yang paling laris dalam periode ini termasuk Microsoft Surface Laptop, Dell XPS, dan HP Spectre. Produk-produk ini dikenal karena desainnya yang premium, performa tinggi, dan integrasi yang baik dengan layanan Microsoft seperti Windows 11 dan Microsoft 365.
-        </p>
-    </section>
+<section>
+<h2>2. Produk Terburuk Laptop Windows</h2>
+<ul>
+<li><strong>Microsoft Surface RT (2012)</strong>: Laptop hybrid yang menjalankan Windows RT, versi Windows yang tidak kompatibel dengan aplikasi desktop tradisional. Keterbatasan ini membuatnya kurang populer di pasar, dan akhirnya dihentikan.</li>
+<li><strong>HP TouchSmart IQ500 Series (2008)</strong>: Laptop all-in-one dengan layar sentuh yang dirilis sebelum teknologi sentuh matang. Performanya lambat dan harganya terlalu mahal untuk fitur yang ditawarkan.</li>
+<li><strong>Dell XPS M2010 (2006)</strong>: Laptop premium dengan desain besar dan berat, tetapi harganya sangat mahal dan kurang praktis untuk digunakan sehari-hari.</li>
+<li><strong>Acer Aspire 5738P (2009)</strong>: Laptop dengan layar sentuh yang memiliki masalah kualitas dan performa yang buruk. Banyak pengguna mengeluhkan overheating dan responsivitas layar sentuh yang buruk.</li>
+<li><strong>Toshiba Satellite A665 (2010)</strong>: Laptop dengan masalah overheating yang serius dan kualitas bahan yang rendah. Banyak pengguna melaporkan kegagalan hardware dalam waktu singkat.</li>
+</ul>
+</section>
 
-    <footer>
-        <h2>Referensi</h2>
-        <ul>
-            <li><a href="https://id.wikipedia.org/wiki/Microsoft_Windows">Sejarah Windows</a></li>
-            <li><a href="https://support.microsoft.com/id-id/surface/spesifikasi-dan-fitur-surface-laptop-2-44924da8-8a48-b0f3-4cb0-f9aa104e7cdd">Review Microsoft Surface Laptop</a></li>
-            <li><a href="https://cyberthreat.id/read/11161/Enam-Versi-Windows-Terburuk-Sepanjang-Masa">Produk gagal laptop windows</a></li>
-            <li><a href="https://learn.microsoft.com/id-id/windows-hardware/design/component-guidelines/platform-requirements-and-motivation">Motivasi mengembangkan laptop window</a></li>
-            <li><a href="https://www.microsoft.com/investor/reports/ar22/index.html">Hasil pendapatan laptop windows 5 tahun terakhir</a></li>
-        </ul>
-    </footer>
+<section>
+<h2>3. Motivasi dalam Mengembangkan Laptop Windows</h2>
+<p>
+Motivasi utama Microsoft dalam mengembangkan laptop Windows adalah untuk menyediakan perangkat yang dapat memenuhi kebutuhan pengguna modern, baik untuk produktivitas, hiburan, maupun kreativitas. Dengan menggabungkan kekuatan sistem operasi Windows dengan desain hardware yang inovatif, Microsoft bertujuan untuk menciptakan laptop yang ringan, tangguh, dan memiliki performa tinggi.
+</p>
+<p>
+Selain itu, Microsoft juga ingin memperluas ekosistem Windows dengan menyediakan perangkat yang terintegrasi dengan layanan cloud seperti Microsoft 365 dan Azure. Hal ini memungkinkan pengguna untuk bekerja secara efisien di mana saja, kapan saja, dengan dukungan fitur-fitur canggih seperti keamanan yang ditingkatkan, AI, dan komputasi awan.
+</p>
+</section>
 
-    <!-- Audio Player -->
-    <div class="audio-player">
-        <audio id="background-music" controls loop>
-            <source src="music.mp3" type="audio/mpeg">
-            Browser Anda tidak mendukung pemutaran audio.
-        </audio>
-    </div>
+<section>
+<h2>4. Cashflow Tertinggi dari Penjualan Laptop Windows dalam 5 Tahun Terakhir</h2>
+<p>
+Selama lima tahun terakhir, penjualan laptop Windows telah memberikan kontribusi signifikan terhadap pendapatan Microsoft. Pada tahun fiskal 2021, pendapatan dari penjualan perangkat Windows, termasuk laptop, mencapai US$16,7 miliar, naik 12% dibandingkan tahun sebelumnya. Peningkatan ini didorong oleh permintaan yang tinggi akan laptop Windows untuk keperluan kerja dari rumah (remote work) dan pembelajaran jarak jauh (online learning) selama pandemi COVID-19.
+</p>
+<p>
+Beberapa seri laptop Windows yang paling laris dalam periode ini termasuk Microsoft Surface Laptop, Dell XPS, dan HP Spectre. Produk-produk ini dikenal karena desainnya yang premium, performa tinggi, dan integrasi yang baik dengan layanan Microsoft seperti Windows 11 dan Microsoft 365.
+</p>
+</section>
 
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const options = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-            const timeString = now.toLocaleTimeString('id-ID', options);
-            document.getElementById('time').textContent = timeString;
+<footer>
+<h2>Referensi</h2>
+<ul>
+<li><a href="https://id.wikipedia.org/wiki/Microsoft_Windows">Sejarah Windows</a></li>
+<li><a href="https://support.microsoft.com/id-id/surface/spesifikasi-dan-fitur-surface-laptop-2-44924da8-8a48-b0f3-4cb0-f9aa104e7cdd">Review Microsoft Surface Laptop</a></li>
+<li><a href="https://cyberthreat.id/read/11161/Enam-Versi-Windows-Terburuk-Sepanjang-Masa">Produk gagal laptop windows</a></li>
+<li><a href="https://learn.microsoft.com/id-id/windows-hardware/design/component-guidelines/platform-requirements-and-motivation">Motivasi mengembangkan laptop window</a></li>
+<li><a href="https://www.microsoft.com/investor/reports/ar22/index.html">Hasil pendapatan laptop windows 5 tahun terakhir</a></li>
+</ul>
+</footer>
 
-            // Tambahkan efek perubahan warna setiap detik
-            const clock = document.getElementById('clock');
-            const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-            clock.style.backgroundColor = randomColor;
-        }
 
-        setInterval(updateTime, 1000);
-        updateTime(); // Initial call to display time immediately
+<div class="audio-player">
+<div class="music-icon" id="music-icon" onclick="toggleMusic()">
+<span style="color: white; font-size: 17px;">☆</span>
+</div>
+<audio id="audio" src="https://raw.githubusercontent.com/Haykal20/Haykal/main/Badboy.mp3" loop></audio>
+</div>
 
-        // Fungsi untuk memutar audio secara otomatis
-        function playAudio() {
-            const audio = document.getElementById('background-music');
-            audio.play().catch(error => {
-                console.log("Autoplay diblokir oleh browser. Silakan interaksi dengan halaman untuk memutar audio.");
-            });
-        }
+<script>
+	
+document.addEventListener('wheel', function(event) {
+if (!document.getElementById('intro').classList.contains('hidden')) {
+event.preventDefault();
+ }
+ }, { passive: false });
+ 
+document.body.classList.add('intro-active');
+ function openWeb() {
+ document.getElementById('intro').classList.add('hidden');
+ document.getElementById('content').classList.remove('hidden');
+ document.body.classList.remove('intro-active');
+ document.getElementById('audio').play();
+ document.getElementById('music-icon').classList.add('rotate');
+ }
+ 
+function updateTime() {
+const now = new Date();
+const options = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+const timeString = now.toLocaleTimeString('id-ID', options);
+document.getElementById('time').textContent = timeString;
 
-        // Coba memutar audio saat halaman dimuat
-        window.addEventListener('load', playAudio);
 
-        // Jika autoplay diblokir, tambahkan event listener untuk memutar audio setelah interaksi pengguna
-        document.addEventListener('click', () => {
-            const audio = document.getElementById('background-music');
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-    </script>
+const clock = document.getElementById('clock');
+const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+clock.style.backgroundColor = randomColor;
+}
+
+setInterval(updateTime, 1000);
+updateTime(); 
+
+function toggleMusic() {
+const audio = document.getElementById('audio');
+const icon = document.getElementById('music-icon');
+if (audio.paused) {
+audio.play();
+icon.classList.add('rotate');
+} else {
+audio.pause();
+icon.classList.remove('rotate');
+}
+}
+</script>
 </body>
 </html>
+<!-- Haykalf.s-->
