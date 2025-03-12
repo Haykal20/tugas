@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const size = Math.random() * 3 + 1;
             const x = Math.random() * (canvas.width - size * 2) + size;
             const y = Math.random() * (canvas.height - size * 2) + size;
-            const color = '#000000'; // Warna bintik-bintik (hitam)
+            const color = '#000000'; 
             const velocityX = (Math.random() - 0.5) * 2;
             const velocityY = (Math.random() - 0.5) * 2;
 
@@ -82,7 +82,7 @@ function openWeb() {
     document.getElementById('content').classList.remove('hidden');
     document.getElementById('content').classList.add('visible');
     document.body.classList.remove('intro-active');
-    window.scrollTo(0, 0); // Reset scroll ke atas
+    window.scrollTo(0, 0); 
     document.getElementById('audio').play();
     document.getElementById('music-icon').classList.add('rotate');
 }
@@ -113,7 +113,7 @@ function toggleMusic() {
     }
 }
 
-// Scroll Animation
+
 document.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section');
     const footer = document.querySelector('footer');
